@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235677e7' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z'%3e%3c/path%3e%3c/svg%3e" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A curated list of free, open-source, and privacy-focused applications and resources. Your guide to a more private digital life." />
+    <title>Privacy Picks | Your Guide to Digital Privacy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Comfortaa', 'sans-serif'],
+            },
+            colors: {
+              primary: '#5677e7',
+              'dark-bg': '#1a1c1c',
+              'dark-card': '#2c2e2e',
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      @keyframes pulse-glow {
+        0%, 100% {
+          transform: translateY(-50%) scale(1);
+          box-shadow: 0 0 0 0 rgba(86, 119, 231, 0.7);
+        }
+        8% {
+          transform: translateY(-50%) scale(1.05);
+          box-shadow: 0 0 10px 5px rgba(86, 119, 231, 0.4);
+        }
+        16% {
+          transform: translateY(-50%) scale(1);
+          box-shadow: 0 0 0 0 rgba(86, 119, 231, 0.7);
+        }
+      }
+      .pulse-animation {
+        animation: pulse-glow 6s infinite ease-in-out;
+      }
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      /* Hide scrollbar for IE, Edge and Firefox */
+      .hide-scrollbar {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+      }
+      /* Scrollbar visible on hover */
+      .scrollbar-on-hover {
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
+      }
+      .scrollbar-on-hover:hover {
+        scrollbar-color: #6B7280 transparent; /* gray-500 */
+      }
+      .scrollbar-on-hover::-webkit-scrollbar {
+        height: 6px;
+      }
+      .scrollbar-on-hover::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .scrollbar-on-hover::-webkit-scrollbar-thumb {
+        background-color: transparent;
+        border-radius: 3px;
+      }
+      .scrollbar-on-hover:hover::-webkit-scrollbar-thumb {
+        background-color: #6B7280; /* gray-500 */
+      }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react-feather": "https://aistudiocdn.com/react-feather@^2.0.10",
+    "path": "https://aistudiocdn.com/path@^0.12.7",
+    "url": "https://aistudiocdn.com/url@^0.11.4",
+    "vite": "https://aistudiocdn.com/vite@^7.2.2",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-gray-100 dark:bg-dark-bg text-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <div id="root"></div>
+    <script type="module" src="./index.js"></script>
+<script type="module" src="./index.tsx"></script>
+</body>
+</html>
