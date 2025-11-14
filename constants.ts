@@ -318,17 +318,23 @@ export const RESOURCES_DATA: ResourceCategory[] = [
     },
     {
       id: 'crypto',
-      title: 'Crypto Wallet & Exchanges',
+      title: 'Cryptocurrency, Wallet & Exchanges',
       icon: [
-        `${ICON_BASE_URL}/icons/monero-gui-wallet.jpg`,
-        `${ICON_BASE_URL}/icons/cake-wallet.jpg`,
-        `${ICON_BASE_URL}/icons/bisq.jpg`
+        `${ICON_BASE_URL}/icons/coinbase.jpg`,
+        `${ICON_BASE_URL}/icons/bitcoin.jpg`,
+        `${ICON_BASE_URL}/icons/binance.jpg`
       ],
       sidebarIcon: 'DollarSign',
       links: [
+        { name: 'Monero', sources: [{type: 'website', url: 'https://www.getmonero.org/'}, {type: 'github', url: 'https://github.com/monero-project/monero'}], imgId: imgIdCounter++, description: "Monero (XMR) is a private, secure, and untraceable cryptocurrency. It uses advanced cryptography to obscure sending and receiving addresses, as well as transacted amounts.", tags: ['Open Source', 'Crypto', 'Currency'], customIcon: `${ICON_BASE_URL}/icons/monero.jpg` },
+        { name: 'Zcash', sources: [{type: 'website', url: 'https://z.cash/'}, {type: 'github', url: 'https://github.com/zcash/zcash'}], imgId: imgIdCounter++, description: "Zcash is a privacy-protecting, digital currency built on strong science. It offers the option of shielded transactions to encrypt sender, receiver, and amount information.", tags: ['Open Source', 'Crypto', 'Currency'], customIcon: `${ICON_BASE_URL}/icons/zcash.jpg` },
+        { name: 'Electrum Wallet', sources: [{type: 'website', url: 'https://electrum.org/'}, {type: 'github', url: 'https://github.com/spesmilo/electrum'}, {type: 'playstore', url: 'https://play.google.com/store/apps/details?id=org.electrum.electrum'}], imgId: imgIdCounter++, description: "Electrum is a fast, secure, and lightweight Bitcoin wallet for desktop and mobile. It offers features for both beginners and advanced users, with a focus on speed and low resource usage.", tags: ['Open Source', 'Crypto', 'Bitcoin', 'Windows', 'MacOS', 'Linux', 'Android'], customIcon: `${ICON_BASE_URL}/icons/electrum-wallet.jpg` },
         { name: 'Cake Wallet', sources: [{type: 'website', url: 'https://cakewallet.com/'}, {type: 'github', url: 'https://github.com/cake-tech/cake_wallet'}, {type: 'playstore', url: 'https://play.google.com/store/apps/details?id=com.cakewallet.cake_wallet'}, {type: 'appstore', url: 'https://apps.apple.com/app/cake-wallet-for-xmr-btc/id1334702542'}], imgId: imgIdCounter++, description: 'Cake Wallet is an open-source, multi-currency wallet that allows you to securely store, send, receive, and exchange your crypto. It places a strong emphasis on privacy, especially for Monero (XMR).', tags: ['Open Source', 'Crypto', 'Android', 'iOS', 'MacOS', 'Linux'], customIcon: `${ICON_BASE_URL}/icons/cake-wallet.jpg` },
         { name: 'Monero GUI Wallet', sources: [{type: 'website', url: 'https://www.getmonero.org/downloads/'}, {type: 'github', url: 'https://github.com/monero-project/monero-gui'}], imgId: imgIdCounter++, description: 'The official open-source graphical user interface (GUI) wallet for Monero, a privacy-centric cryptocurrency. It allows you to manage your XMR securely on your desktop.', tags: ['Open Source', 'Crypto', 'Windows', 'MacOS', 'Linux'], customIcon: `${ICON_BASE_URL}/icons/monero-gui-wallet.jpg` },
-        { name: 'Bisq', sources: [{type: 'website', url: 'https://bisq.network/'}, {type: 'github', url: 'https://github.com/bisq-network/bisq'}], imgId: imgIdCounter++, description: 'Bisq is a peer-to-peer, decentralized, and open-source exchange for cryptocurrencies. It allows users to trade crypto without relying on a central authority, enhancing privacy and security.', tags: ['Open Source', 'Crypto', 'Exchange', 'Windows', 'MacOS', 'Linux'], customIcon: `${ICON_BASE_URL}/icons/bisq.jpg` }
+        { name: 'Proton Wallet', sources: [{type: 'website', url: 'https://proton.me/wallet'}, {type: 'github', url: 'https://github.com/ProtonMail/proton-wallet-android'}, {type: 'playstore', url: 'https://play.google.com/store/apps/details?id=me.proton.android.wallet'}, {type: 'appstore', url: 'https://apps.apple.com/app/proton-wallet-bitcoin/id6475722339'}], imgId: imgIdCounter++, description: "Proton Wallet is a secure, self-custodial Bitcoin wallet from the creators of Proton Mail. It is open source and designed to be easy to use, making Bitcoin accessible to everyone while prioritizing privacy and security.", tags: ['Open Source', 'Crypto', 'Bitcoin', 'Android', 'iOS'], customIcon: `${ICON_BASE_URL}/icons/proton-wallet.jpg` },
+        { name: 'Unstoppable Wallet', sources: [{type: 'website', url: 'https://unstoppable.money/'}, {type: 'github', url: 'https://github.com/unstoppable-wallet'}, {type: 'playstore', url: 'https://play.google.com/store/apps/details?id=io.horizontalsystems.bankwallet'}, {type: 'appstore', url: 'https://apps.apple.com/app/unstoppable-wallet/id1447619327'}], imgId: imgIdCounter++, description: "Unstoppable is a decentralized, multi-currency crypto wallet that puts you in control of your assets. It is non-custodial, private, and supports a wide range of cryptocurrencies.", tags: ['Open Source', 'Crypto', 'Android', 'iOS'], customIcon: `${ICON_BASE_URL}/icons/unstoppable-wallet.jpg` },
+        { name: 'Bisq', sources: [{type: 'website', url: 'https://bisq.network/'}, {type: 'github', url: 'https://github.com/bisq-network/bisq'}], imgId: imgIdCounter++, description: 'Bisq is a peer-to-peer, decentralized, and open-source exchange for cryptocurrencies. It allows users to trade crypto without relying on a central authority, enhancing privacy and security.', tags: ['Open Source', 'Crypto', 'Exchange', 'Windows', 'MacOS', 'Linux'], customIcon: `${ICON_BASE_URL}/icons/bisq.jpg` },
+        { name: 'Peach Bitcoin', sources: [{type: 'website', url: 'https://peachbitcoin.com/'}, {type: 'github', url: 'https://github.com/Peach2Peach/peach-app'}, {type: 'playstore', url: 'https://play.google.com/store/apps/details?id=com.peachbitcoin.peach.mainnet'}, {type: 'appstore', url: 'https://apps.apple.com/app/peach-bitcoin/id1661769757'}], imgId: imgIdCounter++, description: "Peach is a peer-to-peer mobile app that allows you to buy and sell Bitcoin without KYC. It connects buyers and sellers directly, offering a more private and decentralized trading experience.", tags: ['Open Source', 'Crypto', 'Bitcoin', 'Exchange', 'Android', 'iOS'], customIcon: `${ICON_BASE_URL}/icons/peach-bitcoin.jpg` }
       ]
     },
     {
@@ -410,9 +416,7 @@ export const RESOURCES_DATA: ResourceCategory[] = [
       id: 'other-tools',
       title: 'Other Tools',
       icon: [
-        `${ICON_BASE_URL}/icons/onionshare.jpg`,
-        `${ICON_BASE_URL}/icons/syncthing.jpg`,
-        `${ICON_BASE_URL}/icons/localsend.jpg`
+        `${ICON_BASE_URL}/icons/tools.jpg`
       ],
       sidebarIcon: 'Tool',
       links: [
