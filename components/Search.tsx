@@ -2,7 +2,7 @@ import { FC, useMemo } from 'react';
 import { Icon } from './icons';
 
 const customTagOrder = [
-'Open Source',
+  'Open Source',
 'Free',
 'Free Tier',
 'Android',
@@ -48,15 +48,17 @@ const Search: FC<SearchProps> = ({ allTags, selectedTags, onTagClick, searchTerm
   }, [allTags]);
 
   const sectionClasses = `
-  absolute top-0 w-full z-30 bg-white dark:bg-dark-card rounded-[20px] shadow-lg
+  w-full bg-white dark:bg-dark-card rounded-[20px] shadow-lg
   overflow-hidden transition-all duration-500 ease-in-out
   ${isSearchVisible
     ? 'max-h-[500px] p-5 opacity-100'
-    : 'max-h-0 p-0 opacity-0 border-none'
+    : 'max-h-0 p-0 opacity-0 border-none pointer-events-none'
   }
   `;
 
   return (
+    <div className="fixed top-16 inset-x-0 z-30 pointer-events-none">
+    <div className="container mx-auto px-4 pointer-events-auto">
     <section
     id="search"
     className={sectionClasses}
@@ -117,6 +119,8 @@ const Search: FC<SearchProps> = ({ allTags, selectedTags, onTagClick, searchTerm
       </div>
     )}
     </section>
+    </div>
+    </div>
   );
 };
 
