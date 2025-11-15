@@ -2,7 +2,7 @@ import { FC, useMemo } from 'react';
 import { Icon } from './icons';
 
 const customTagOrder = [
-  'Open Source',
+'Open Source',
 'Free',
 'Free Tier',
 'Android',
@@ -24,9 +24,10 @@ interface SearchProps {
   onTagClick: (tag: string) => void;
   searchTerm: string;
   onSearchChange: (term: string) => void;
+  isSearchVisible: boolean;
 }
 
-const Search: FC<SearchProps> = ({ allTags, selectedTags, onTagClick, searchTerm, onSearchChange }) => {
+const Search: FC<SearchProps> = ({ allTags, selectedTags, onTagClick, searchTerm, onSearchChange, isSearchVisible }) => {
 
   const sortedTags = useMemo(() => {
     return [...allTags].sort((a, b) => {
@@ -46,8 +47,21 @@ const Search: FC<SearchProps> = ({ allTags, selectedTags, onTagClick, searchTerm
     });
   }, [allTags]);
 
+  const sectionClasses = `
+  absolute top-0 w-full z-30 bg-white dark:bg-dark-card rounded-[20px] shadow-lg
+  overflow-hidden transition-all duration-500 ease-in-out
+  ${isSearchVisible
+    ? 'max-h-[500px] p-5 opacity-100'
+    : 'max-h-0 p-0 opacity-0 border-none'
+  }
+  `;
+
   return (
-    <section id="search" className="sticky top-16 z-30 mb-12 bg-white dark:bg-dark-card p-5 rounded-[20px] shadow-lg scroll-mt-20">
+    <section
+    id="search"
+    className={sectionClasses}
+    onClick={(e) => e.stopPropagation()}
+    >
     <div className="mb-5">
     <div className="relative">
     <input

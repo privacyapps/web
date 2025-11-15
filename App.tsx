@@ -14,6 +14,7 @@ const App: FC = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>('');
+  const [isSearchVisible, setIsSearchVisible] = useState<boolean>(false);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') as Theme | null;
@@ -43,25 +44,33 @@ const App: FC = () => {
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
-  
+
+  const toggleSearch = () => {
+    setIsSearchVisible(prev => !prev);
+  };
+
+  const closeSearch = () => {
+    setIsSearchVisible(false);
+  };
+
   const handleTagClick = (tag: string) => {
     setSelectedTags(prevTags => {
-        if (prevTags.includes(tag)) {
-            return prevTags.filter(t => t !== tag);
-        } else {
-            return [...prevTags, tag];
-        }
+      if (prevTags.includes(tag)) {
+        return prevTags.filter(t => t !== tag);
+      } else {
+        return [...prevTags, tag];
+      }
     });
   };
 
   const allTags = useMemo(() => {
     const tags = new Set<string>();
     RESOURCES_DATA.forEach(category => {
-        category.subCategories.forEach(sub => {
-            sub.links.forEach(link => {
-                link.tags.forEach(tag => tags.add(tag));
-            });
+      category.subCategories.forEach(sub => {
+        sub.links.forEach(link => {
+          link.tags.forEach(tag => tags.add(tag));
         });
+      });
     });
     return Array.from(tags).sort();
   }, []);
@@ -72,28 +81,28 @@ const App: FC = () => {
     let resources = RESOURCES_DATA;
 
     if (selectedTags.length > 0) {
-        resources = resources.map(category => ({
-            ...category,
-            subCategories: category.subCategories.map(sub => ({
-                ...sub,
-                links: sub.links.filter(link =>
-                    selectedTags.every(tag => link.tags.includes(tag))
-                )
-            })).filter(sub => sub.links.length > 0)
-        })).filter(category => category.subCategories.length > 0);
+      resources = resources.map(category => ({
+        ...category,
+        subCategories: category.subCategories.map(sub => ({
+          ...sub,
+          links: sub.links.filter(link =>
+          selectedTags.every(tag => link.tags.includes(tag))
+          )
+        })).filter(sub => sub.links.length > 0)
+      })).filter(category => category.subCategories.length > 0);
     }
 
     if (lowerCaseSearchTerm) {
-        resources = resources.map(category => ({
-            ...category,
-            subCategories: category.subCategories.map(sub => ({
-                ...sub,
-                links: sub.links.filter(link => 
-                    link.name.toLowerCase().includes(lowerCaseSearchTerm) || 
-                    link.description.toLowerCase().includes(lowerCaseSearchTerm)
-                )
-            })).filter(sub => sub.links.length > 0)
-        })).filter(category => category.subCategories.length > 0);
+      resources = resources.map(category => ({
+        ...category,
+        subCategories: category.subCategories.map(sub => ({
+          ...sub,
+          links: sub.links.filter(link =>
+          link.name.toLowerCase().includes(lowerCaseSearchTerm) ||
+          link.description.toLowerCase().includes(lowerCaseSearchTerm)
+          )
+        })).filter(sub => sub.links.length > 0)
+      })).filter(category => category.subCategories.length > 0);
     }
 
     return resources;
@@ -102,30 +111,33 @@ const App: FC = () => {
 
   return (
     <div className="bg-gray-50 dark:bg-dark-bg text-gray-900 dark:text-gray-100 min-h-screen font-sans">
-      <Navbar theme={theme} toggleTheme={toggleTheme} />
-      <div className="container mx-auto px-4 py-8">
-        <Sidebar data={RESOURCES_DATA} isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-        <main className="min-w-0">
-            <Search 
-                allTags={allTags}
-                selectedTags={selectedTags}
-                onTagClick={handleTagClick}
-                searchTerm={searchTerm}
-                onSearchChange={setSearchTerm}
-            />
-            {filteredResources.map((category) => (
-              <ResourceSection 
-                key={category.id}
-                category={category}
-                selectedTags={selectedTags}
-                onTagClick={handleTagClick}
-              />
-            ))}
-        </main>
-      </div>
-      <Footer />
-      <FloatingTocButton toggleSidebar={toggleSidebar} isOpen={isSidebarOpen} />
-      <ScrollToTopButton />
+    <Navbar theme={theme} toggleTheme={toggleTheme} toggleSearch={toggleSearch} />
+    <div className="container mx-auto px-4 py-8">
+    <Sidebar data={RESOURCES_DATA} isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+    <main className="min-w-0 relative">
+    <Search
+    isSearchVisible={isSearchVisible}
+    allTags={allTags}
+    selectedTags={selectedTags}
+    onTagClick={handleTagClick}
+    searchTerm={searchTerm}
+    onSearchChange={setSearchTerm}
+    />
+    <div onClick={closeSearch}>
+    {filteredResources.map((category) => (
+      <ResourceSection
+      key={category.id}
+      category={category}
+      selectedTags={selectedTags}
+      onTagClick={handleTagClick}
+      />
+    ))}
+    </div>
+    </main>
+    </div>
+    <Footer />
+    <FloatingTocButton toggleSidebar={toggleSidebar} isOpen={isSidebarOpen} />
+    <ScrollToTopButton />
     </div>
   );
 };
