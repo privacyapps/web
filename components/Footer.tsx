@@ -8,10 +8,10 @@ const Footer: FC = () => {
     <p className="text-sm mt-2">Your guide to a more private digital life.</p>
     <div className="flex justify-center gap-4 mt-4 text-sm">
     <a href="https://github.com/privacyapps" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-    GitHub
+    <b>GitHub</b>
     </a>
     <a href="https://www.reddit.com/u/GlitchGarrison/" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-    Reddit
+    <b>Reddit</b>
     </a>
     </div>
     </div>
