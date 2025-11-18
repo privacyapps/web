@@ -56,6 +56,7 @@ const SourceIcon: FC<{ type: SourceType }> = ({ type }) => {
         case 'fdroid':
             return <Icon name="Package" size={20} className={commonClasses} />;
         case 'chrome':
+            return <Icon name="Chrome" size={20} className={commonClasses} />;
         case 'firefox':
             return <Icon name="Globe" size={20} className={commonClasses} />;
         default:
