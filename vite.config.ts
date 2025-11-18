@@ -1,7 +1,6 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { defineConfig, loadEnv } from 'vite';
-import react from '@vitejs/plugin-react';
 
 // Get the directory name of the current module
 const __filename = fileURLToPath(import.meta.url);
@@ -25,20 +24,20 @@ export default defineConfig(({ mode }) => {
     },
 
     // List of Vite plugins to use
-    plugins: [react()],
+    plugins: [],
 
-                            // Define global constants to be replaced at build time.
-                            // This is used to expose environment variables to the client-side code.
-                            define: {
-                              'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
+    // Define global constants to be replaced at build time.
+    // This is used to expose environment variables to the client-side code.
+    define: {
+      'process.env.API_KEY': JSON.stringify(env.GEMINI_API_KEY),
                             'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
-                            },
+    },
 
-                            // Configure path aliases for easier imports
-                            resolve: {
-                              alias: {
-                                '@': path.resolve(__dirname, '.'),
-                              },
-                            },
+    // Configure path aliases for easier imports
+    resolve: {
+      alias: {
+        '@': path.resolve(__dirname, '.'),
+      },
+    },
   };
 });
