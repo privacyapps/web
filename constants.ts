@@ -262,8 +262,8 @@ export const RESOURCES_DATA: ResourceCategory[] = [
         id: 'health-wellness',
         title: 'Health and Wellness',
         icon: [
-          `${ICON_BASE_URL}/icons/apple-fitness.jpg`,
           `${ICON_BASE_URL}/icons/google-fit.jpg`,
+          `${ICON_BASE_URL}/icons/apple-fitness.jpg`,
           `${ICON_BASE_URL}/icons/samsung-health.jpg`
         ],
         sidebarIcon: 'Heart',
@@ -287,9 +287,44 @@ export const RESOURCES_DATA: ResourceCategory[] = [
         ],
         sidebarIcon: 'PlayCircle',
         links: [
-          { name: 'WayDroid', sources: [{type: 'website', url: 'https://waydro.id/'}, {type: 'github', url: 'https://github.com/waydroid/waydroid'}], imgId: imgIdCounter++, description: "A container-based approach to boot a full Android system on a regular GNU/Linux system. It provides a way to run Android apps on Linux with near-native performance.", tags: ['Open Source', 'Free', 'Emulator', 'Android', 'Linux'], customIcon: `${ICON_BASE_URL}/icons/waydroid.jpg` },
-          { name: 'Dolphin Emulator', sources: [{type: 'website', url: 'https://dolphin-emu.org/'}, {type: 'playstore', url: 'https://play.google.com/store/apps/details?id=org.dolphinemu.dolphinemu'}, {type: 'fdroid', url: 'https://f-droid.org/es/packages/org.dolphinemu.dolphinemu/'}, {type: 'github', url: 'https://github.com/dolphin-emu/dolphin'}], imgId: imgIdCounter++, description: "An open-source emulator for the Nintendo GameCube and Wii. It allows you to play games from these consoles on your PC, Mac, or Android device with high compatibility and performance enhancements.", tags: ['Open Source', 'Free', 'Emulator', 'Gaming', 'Windows', 'MacOS', 'Linux', 'Android'], customIcon: `${ICON_BASE_URL}/icons/dolphin-emulator.jpg` },
-          { name: 'PPSSPP', sources: [{type: 'website', url: 'https://www.ppsspp.org/'}, {type: 'playstore', url: 'https://play.google.com/store/apps/details?id=org.ppsspp.ppsspp'}, {type: 'appstore', url: 'https://apps.apple.com/us/app/ppsspp-psp-emulator/id6496972903'}, {type: 'fdroid', url: 'https://f-droid.org/packages/org.ppsspp.ppsspp/'}, {type: 'github', url: 'https://github.com/hrydgard/ppsspp'}], imgId: imgIdCounter++, description: "A fast and portable PSP emulator for Android, Windows, Mac, Linux, and iOS. It can run most PSP games at full speed and offers features like save states and graphical enhancements.", tags: ['Open Source', 'Free', 'Emulator', 'Gaming', 'Windows', 'MacOS', 'Linux', 'Android', 'iOS'], customIcon: `${ICON_BASE_URL}/icons/ppsspp.jpg` }
+          { name: 'WayDroid', sources: [{type: 'website', url: 'https://waydro.id/'}, {type: 'github', url: 'https://github.com/waydroid/waydroid'}], imgId: imgIdCounter++, description: "A container-based approach to boot a full Android system on a regular GNU/Linux system. It provides a way to run Android apps on Linux with near-native performance.", tags: ['Open Source', 'Free', 'Android Emulator', 'Linux'], customIcon: `${ICON_BASE_URL}/icons/waydroid.jpg` },
+          { name: 'Dolphin Emulator', sources: [{type: 'website', url: 'https://dolphin-emu.org/'}, {type: 'playstore', url: 'https://play.google.com/store/apps/details?id=org.dolphinemu.dolphinemu'}, {type: 'fdroid', url: 'https://f-droid.org/es/packages/org.dolphinemu.dolphinemu/'}, {type: 'github', url: 'https://github.com/dolphin-emu/dolphin'}], imgId: imgIdCounter++, description: "An open-source emulator for the Nintendo GameCube and Wii. It allows you to play games from these consoles on your PC, Mac, or Android device with high compatibility and performance enhancements.", tags: ['Open Source', 'Free', 'Game Emulator', 'Windows', 'MacOS', 'Linux', 'Android'], customIcon: `${ICON_BASE_URL}/icons/dolphin-emulator.jpg` },
+          { name: 'PPSSPP', sources: [{type: 'website', url: 'https://www.ppsspp.org/'}, {type: 'playstore', url: 'https://play.google.com/store/apps/details?id=org.ppsspp.ppsspp'}, {type: 'appstore', url: 'https://apps.apple.com/us/app/ppsspp-psp-emulator/id6496972903'}, {type: 'fdroid', url: 'https://f-droid.org/packages/org.ppsspp.ppsspp/'}, {type: 'github', url: 'https://github.com/hrydgard/ppsspp'}], imgId: imgIdCounter++, description: "A fast and portable PSP emulator for Android, Windows, Mac, Linux, and iOS. It can run most PSP games at full speed and offers features like save states and graphical enhancements.", tags: ['Open Source', 'Free', 'Game Emulator', 'Windows', 'MacOS', 'Linux', 'Android', 'iOS'], customIcon: `${ICON_BASE_URL}/icons/ppsspp.jpg` },
+          { name: 'Lutris', sources: [{type: 'website', url: 'https://lutris.net/'}, {type: 'github', url: 'https://github.com/lutris'}], imgId: imgIdCounter++, description: "Open Source gaming platform for Linux. It installs and launches games so you can start playing without the hassle of setting up your games.", tags: ['Open Source', 'Free', 'Linux', 'Game Library Manager', 'Compatibility Layer Tool'], customIcon: `${ICON_BASE_URL}/icons/lutris.jpg` },
+          { name: 'Heroic Games Launcher', sources: [{type: 'website', url: 'https://heroicgameslauncher.com/'}, {type: 'github', url: 'https://github.com/flavioislima/HeroicGamesLauncher'}], imgId: imgIdCounter++, description: "An Open Source Game Launcher for Linux, Windows and macOS (for Epic Games, GOG and Amazon Prime Games).", tags: ['Open Source', 'Free', 'Windows', 'Mac', 'Linux', 'Game Library Manager', 'Compatibility Layer Tool'], customIcon: `${ICON_BASE_URL}/icons/heroic-games-launcher.jpg` },
+          { name: 'WinBoat', sources: [{type: 'website', url: 'https://www.winboat.app/'}, {type: 'github', url: 'https://github.com/TibixDev/winboat'}], imgId: imgIdCounter++, description: "WinBoat is a tool that helps you run Windows applications on Linux using Docker.", tags: ['Open Source', 'Free', 'Compatibility Layer Tool', 'Virtualization Tool', 'Linux', 'Docker'], customIcon: `${ICON_BASE_URL}/icons/winboat.jpg` },
+          { name: 'Wine', sources: [{type: 'website', url: 'http://www.winehq.org/'}, {type: 'github', url: 'https://gitlab.winehq.org/wine/wine/-/wikis/Source-Code'}], imgId: imgIdCounter++, description: "Wine (originally an acronym for \"Wine Is Not an Emulator\") is a compatibility layer capable of running Windows applications on several POSIX-compliant operating systems, such as Linux, macOS, & BSD.", tags: ['Open Source', 'Free', 'Mac', 'Linux', 'Android', 'Compatibility Layer Tool'], customIcon: `${ICON_BASE_URL}/icons/wine.jpg` }
+        ]
+      },
+      {
+        id: 'firmwares',
+        title: 'Firmwares',
+        icon: [
+            `${ICON_BASE_URL}/icons/coreboot.jpg`,
+            `${ICON_BASE_URL}/icons/openwrt.jpg`,
+            `${ICON_BASE_URL}/icons/opnsense.jpg`
+        ],
+        sidebarIcon: 'Cpu',
+        links: [
+          { name: 'CoreBoot', sources: [{type: 'website', url: 'https://coreboot.org/'}, {type: 'github', url: 'https://github.com/coreboot/coreboot'}], imgId: imgIdCounter++, description: "coreboot is an extended firmware platform that delivers a lightning fast and secure boot experience on modern computers and embedded systems.", tags: ['Open Source', 'Firmware', 'Free'], customIcon: `${ICON_BASE_URL}/icons/coreboot.jpg` },
+          { name: 'Libreboot', sources: [{type: 'website', url: 'https://www.libreboot.org/'}, {type: 'github', url: 'https://codeberg.org/libreboot/lbmk'}], imgId: imgIdCounter++, description: "Libreboot is a free BIOS or UEFI replacement, initializing the hardware and booting the operating system. It prioritizes freedom and privacy.", tags: ['Open Source', 'Firmware', 'Free'], customIcon: `${ICON_BASE_URL}/icons/libreboot.jpg` },
+          { name: 'OpenWRT', sources: [{type: 'website', url: 'https://openwrt.org/'}, {type: 'github', url: 'https://git.openwrt.org/openwrt/openwrt.git'}], imgId: imgIdCounter++, description: "OpenWrt is an open-source project for embedded operating systems based on Linux, primarily used on embedded devices to route network traffic.", tags: ['Open Source', 'Router', 'Firmware', 'Free'], customIcon: `${ICON_BASE_URL}/icons/openwrt.jpg` },
+          { name: 'OPNsense', sources: [{type: 'website', url: 'https://opnsense.org/'}, {type: 'github', url: 'https://github.com/opnsense'}], imgId: imgIdCounter++, description: "OPNsense is an open source, easy-to-use and easy-to-build HardenedBSD based firewall and routing platform.", tags: ['Open Source', 'Firewall', 'Firmware', 'Free'], customIcon: `${ICON_BASE_URL}/icons/opnsense.jpg` }
+        ]
+      },
+      {
+        id: 'smart-home',
+        title: 'Smart Home',
+        icon: [
+            `${ICON_BASE_URL}/icons/apple-home.jpg`,
+            `${ICON_BASE_URL}/icons/google-home.jpg`,
+            `${ICON_BASE_URL}/icons/amazon-alexa.jpg`
+        ],
+        sidebarIcon: 'Home',
+        links: [
+            { name: 'Home Assistant', sources: [{type: 'website', url: 'https://home-assistant.io/'}, {type: 'playstore', url: 'https://play.google.com/store/apps/details?id=io.homeassistant.companion.android'}, {type: 'appstore', url: 'https://apps.apple.com/us/app/home-assistant/id1099568401'}, {type: 'fdroid', url: 'https://f-droid.org/packages/io.homeassistant.companion.android.minimal/'}, {type: 'github', url: 'https://github.com/home-assistant/core'}], imgId: imgIdCounter++, description: "Open source home automation that puts local control and privacy first. Powered by a worldwide community of tinkerers and DIY enthusiasts.", tags: ['Open Source', 'Smart Home', 'Automation', 'Free', 'Self-Hosted', 'Android', 'iOS'], customIcon: `${ICON_BASE_URL}/icons/home-assistant.jpg` },
+            { name: 'ioBroker', sources: [{type: 'website', url: 'https://www.iobroker.net/'}, {type: 'github', url: 'https://github.com/ioBroker/ioBroker'}], imgId: imgIdCounter++, description: "ioBroker is an open source IoT platform (Fog computing) which has the ability to manage your home automation system.", tags: ['Open Source', 'Smart Home', 'Automation', 'Free', 'Self-Hosted'], customIcon: `${ICON_BASE_URL}/icons/iobroker.jpg` },
+            { name: 'OpenHAB', sources: [{type: 'website', url: 'https://www.openhab.org/'}, {type: 'playstore', url: 'https://play.google.com/store/apps/details?id=org.openhab.habdroid'}, {type: 'appstore', url: 'https://apps.apple.com/us/app/openhab/id6505005945'}, {type: 'fdroid', url: 'https://f-droid.org/packages/org.openhab.habdroid/'}, {type: 'github', url: 'https://github.com/openhab'}], imgId: imgIdCounter++, description: "A vendor and technology agnostic open source automation software for your home.", tags: ['Open Source', 'Smart Home', 'Automation', 'Free', 'Self-Hosted', 'Android', 'iOS'], customIcon: `${ICON_BASE_URL}/icons/openhab.jpg` }
         ]
       }
     ]
@@ -579,6 +614,24 @@ export const RESOURCES_DATA: ResourceCategory[] = [
         { name: 'LinkStack', sources: [{type: 'website', url: 'https://linkstack.org/'}, {type: 'github', url: 'https://github.com/LinkStackOrg/LinkStack'}], imgId: imgIdCounter++, description: "An open-source and self-hostable alternative to Linktree. Create a personalized landing page to showcase all your important links with a single URL.", tags: ['Open Source', 'Free', 'Self-Hosted', 'Link in Bio'], customIcon: `${ICON_BASE_URL}/icons/linkstack.jpg` },
         { name: 'LittleLink', sources: [{type: 'website', url: 'https://littlelink.io/'}, {type: 'github', url: 'https://github.com/sethcottle/littlelink'}], imgId: imgIdCounter++, description: "A lightweight, open-source, and self-hosted landing page for all your links. It's easy to set up and customize, providing a simple and fast way to share your online presence.", tags: ['Open Source', 'Free', 'Self-Hosted', 'Link in Bio'], customIcon: `${ICON_BASE_URL}/icons/littlelink.jpg` },
         { name: 'KyteLink', sources: [{type: 'website', url: 'https://kytelink.com/'}, {type: 'github', url: 'https://github.com/aleemrehmtulla/kytelink'}], imgId: imgIdCounter++, description: "A free and open-source Linktree alternative that you can self-host. It offers a clean interface and allows you to manage all your links from a single page.", tags: ['Open Source', 'Free', 'Self-Hosted', 'Link in Bio'], customIcon: `${ICON_BASE_URL}/icons/kytelink.jpg` },
+      ]
+    },
+    {
+      id: 'large-language-models',
+      title: 'Large Language Models',
+      icon: [
+        `${ICON_BASE_URL}/icons/chatgpt.jpg`,
+        `${ICON_BASE_URL}/icons/google-gemini.jpg`,
+        `${ICON_BASE_URL}/icons/perplexity.jpg`
+      ],
+      sidebarIcon: 'MessageSquare',
+      links: [
+        { name: 'Ollama', sources: [{type: 'website', url: 'https://ollama.com/'}, {type: 'github', url: 'https://github.com/ollama/ollama'}], imgId: imgIdCounter++, description: "Get up and running with large language models locally. Run Llama 3.2, Mistral, Gemma 2, and other models.", tags: ['Open Source', 'Free', 'Local', 'LLM', 'Windows', 'MacOS', 'Linux'], customIcon: `${ICON_BASE_URL}/icons/ollama.jpg` },
+        { name: 'Ollama App', sources: [{type: 'github', url: 'https://github.com/JHubi1/ollama-app'}, {type: 'fdroid', url: 'https://apt.izzysoft.de/fdroid/index/apk/com.freakurl.apps.ollama/'}], imgId: imgIdCounter++, description: "A modern and easy-to-use Android client for Ollama.", tags: ['Open Source', 'LLM', 'Android', 'Client', 'Free'], customIcon: `${ICON_BASE_URL}/icons/ollama-app.jpg` },
+        { name: 'Alpaca', sources: [{type: 'website', url: 'https://jeffser.com/alpaca/'}, {type: 'github', url: 'https://github.com/Jeffser/Alpaca'}], imgId: imgIdCounter++, description: "A simple and clean interface for running local LLMs with Ollama on Linux, macOS, and Windows.", tags: ['Open Source', 'LLM', 'Client', 'Windows', 'MacOS', 'Linux', 'Free'], customIcon: `${ICON_BASE_URL}/icons/alpaca.jpg` },
+        { name: 'Lumo', sources: [{type: 'website', url: 'https://lumo.proton.me/guest'}, {type: 'playstore', url: 'https://play.google.com/store/apps/details?id=me.proton.android.lumo'}, {type: 'appstore', url: 'https://apps.apple.com/us/app/lumo-by-proton/id6746714949'}, {type: 'github', url: 'https://github.com/ProtonLumo'}], imgId: imgIdCounter++, description: "An intelligent, private, and secure AI assistant from Proton.", tags: ['Open Source', 'LLM', 'Privacy', 'Free Tier', 'Android', 'iOS'], customIcon: `${ICON_BASE_URL}/icons/lumo.jpg` },
+        { name: 'Duck.ai', sources: [{type: 'website', url: 'https://duck.ai/'}, {type: 'playstore', url: 'https://play.google.com/store/apps/details?id=com.duckduckgo.mobile.android'}, {type: 'appstore', url: 'https://apps.apple.com/us/app/duckduckgo-duck-ai-optional/id663592361'}], imgId: imgIdCounter++, description: "DuckDuckGo's AI chat interface. Access popular LLMs anonymously.", tags: ['Proprietary', 'LLM', 'Online', 'Free', 'Android', 'iOS'], customIcon: `${ICON_BASE_URL}/icons/duck-ai.jpg` },
+        { name: 'Mistral Le Chat', sources: [{type: 'website', url: 'https://mistral.ai/products/le-chat'}, {type: 'playstore', url: 'https://play.google.com/store/apps/details?id=ai.mistral.chat'}, {type: 'appstore', url: 'https://apps.apple.com/us/app/le-chat-by-mistral-ai/id6740410176'}], imgId: imgIdCounter++, description: "A conversational AI interface by Mistral AI.", tags: ['Proprietary', 'LLM', 'Online', 'Free Tier', 'Android', 'iOS'], customIcon: `${ICON_BASE_URL}/icons/mistral-le-chat.jpg` },
       ]
     },
     {
