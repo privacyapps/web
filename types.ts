@@ -17,6 +17,7 @@ export interface ResourceLink {
   description: string;
   tags: string[];
   customIcon?: string;
+  recommended?: boolean;
 }
 
 export interface ResourceSubCategory {
