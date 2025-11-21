@@ -223,12 +223,12 @@ const ResourceSection: FC<ResourceSectionProps> = ({ category, selectedTags, onT
 
                     return (
                         <div key={link.imgId} className="bg-white dark:bg-dark-card p-6 rounded-[20px] shadow-lg flex flex-col h-full hover:shadow-xl transition-shadow duration-300">
-                            <div className="flex justify-between items-start mb-3">
+                            <div className="flex items-stretch gap-4 mb-3 h-[55px]">
                                 <a
                                     href={websiteUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-3 group"
+                                    className="flex-shrink-0 group"
                                 >
                                     <ImageWithPlaceholder
                                         src={iconSrc}
@@ -238,20 +238,29 @@ const ResourceSection: FC<ResourceSectionProps> = ({ category, selectedTags, onT
                                         width="55"
                                         height="55"
                                     />
-                                    <span className="text-xl font-bold group-hover:text-primary dark:group-hover:text-primary transition-colors flex items-center gap-2">
-                                        {link.name}
-                                        {link.recommended && (
-                                          <Icon name="Star" className="w-5 h-5 text-yellow-400 fill-current mb-1" />
-                                        )}
-                                     </span>
                                 </a>
-                                <div className="flex items-center gap-2.5 flex-shrink-0 ml-2 mt-1">
-                                    {sortedSourceLinks.map(source => (
-                                        <a key={source.url} href={source.url} target="_blank" rel="noopener noreferrer" aria-label={`${link.name} on ${source.type}`}>
-                                            <SourceIcon type={source.type} />
-                                        </a>
-                                    ))}
-                                 </div>
+                                <div className="flex flex-col justify-between py-0.5">
+                                    <a
+                                        href={websiteUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="group block"
+                                    >
+                                        <span className="text-xl font-bold leading-none group-hover:text-primary dark:group-hover:text-primary transition-colors flex items-center gap-2">
+                                            {link.name}
+                                            {link.recommended && (
+                                              <Icon name="Star" className="w-5 h-5 text-yellow-400 fill-current mb-1" />
+                                            )}
+                                        </span>
+                                    </a>
+                                    <div className="flex items-center gap-3">
+                                        {sortedSourceLinks.map(source => (
+                                            <a key={source.url} href={source.url} target="_blank" rel="noopener noreferrer" aria-label={`${link.name} on ${source.type}`}>
+                                                <SourceIcon type={source.type} />
+                                            </a>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
                             
                             <p 
